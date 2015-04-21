@@ -1,4 +1,4 @@
-/* Check that GOTPCREL is used to access glob_a.  */
+/* Check that GOTPCREL/GOT is used to access glob_a.  */
 /* { dg-do compile { target *-*-linux* } } */
 /* { dg-require-effective-target pie_copyreloc } */
 /* { dg-options "-O2 -fpie" } */
@@ -15,3 +15,5 @@ int foo ()
 
 /* weak glob_a should be accessed with a GOTPCREL.  */
 /* { dg-final { scan-assembler "glob_a@GOTPCREL" { target { ! ia32 } } } } */
+/* weak glob_a should be accessed with a GOT.  */
+/* { dg-final { scan-assembler "glob_a@GOT\\(" { target ia32 } } } */

@@ -1349,6 +1349,18 @@
 #endif
 
 
+/* Define 0/1 if your 32-bit linker supports -pie option with copy reloc. */
+#ifndef USED_FOR_TARGET
+#undef HAVE_LD_32BIT_PIE_COPYRELOC
+#endif
+
+
+/* Define 0/1 if your 64-bit linker supports -pie option with copy reloc. */
+#ifndef USED_FOR_TARGET
+#undef HAVE_LD_64BIT_PIE_COPYRELOC
+#endif
+
+
 /* Define if your linker supports --as-needed/--no-as-needed or equivalent
    options. */
 #ifndef USED_FOR_TARGET
@@ -1426,12 +1438,6 @@
 /* Define if your linker supports -pie option. */
 #ifndef USED_FOR_TARGET
 #undef HAVE_LD_PIE
-#endif
-
-
-/* Define 0/1 if your linker supports -pie option with copy reloc. */
-#ifndef USED_FOR_TARGET
-#undef HAVE_LD_PIE_COPYRELOC
 #endif
 
 
